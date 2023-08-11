@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-ng-on-destroy',
   template: `<a (click)="update()">Update</a><br/>
   <app-ng-on-destroy-child *ngIf='showChild'></app-ng-on-destroy-child>`,
-  styleUrls: ['./ng-on-destroy.component.css']
+  styleUrls: ['./ng-on-destroy-component.component.css']
 })
 export class NgOnDestroyComponentComponent implements OnInit {
 
