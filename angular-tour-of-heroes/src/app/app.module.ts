@@ -23,6 +23,11 @@ import { VersionChildComponent } from './version-child/version-child.component';
 import { VersionParentComponent } from './version-parent/version-parent.component';
 import { VoterComponent } from './voter/voter.component';
 import { VotetakerComponent } from './votetaker/votetaker.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CountdownParentComponent } from './countdown-parent/countdown-parent.component';
+import { CountdownParentViewChildComponent } from './countdown-parent-view-child/countdown-parent-view-child.component';
+import { NgOnDestroyComponentComponent } from './ng-on-destroy-component/ng-on-destroy-component.component';
+import { NgOnDestroyChildComponentComponent } from './ng-on-destroy-child-component/ng-on-destroy-child-component.component';
 
 
 
@@ -44,6 +49,11 @@ import { VotetakerComponent } from './votetaker/votetaker.component';
     VersionParentComponent,
     VoterComponent,
     VotetakerComponent,
+    CountdownTimerComponent,
+    CountdownParentComponent,
+    CountdownParentViewChildComponent,
+    NgOnDestroyComponentComponent,
+    NgOnDestroyChildComponentComponent,
   ],
   imports: [
     BrowserModule,
