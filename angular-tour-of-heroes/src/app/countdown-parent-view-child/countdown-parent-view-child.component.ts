@@ -4,11 +4,13 @@ import { CountdownTimerComponent } from '../countdown-timer/countdown-timer.comp
 @Component({
   selector: 'app-countdown-parent-view-child',
   template: `
+  <div class="app-countdown-parent-view-child">
     <h3>Countdown to Liftoff (via ViewChild)</h3>
     <button type="button" (click)="start()">Start</button>
     <button type="button" (click)="stop()">Stop</button>
     <div class="seconds">{{ seconds() }}</div>
     <app-countdown-timer></app-countdown-timer>
+    </div>
   `,
   styleUrls: ['./countdown-parent-view-child.component.css']
 })
