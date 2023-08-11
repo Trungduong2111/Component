@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="ClassInHeader title">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="ClassInHeader nav">
+        <nav>
+            <a routerLink="/dashboard">Dashboard</a>
+            <a routerLink="/heroes">Heroes</a>
+        </nav>
+    </div>
+
+</div>
+
+
+<router-outlet></router-outlet>
+<app-messages></app-messages>
+<!-- Notice the colSpan property is camel case -->
+<tr>
+    <td id="td11" [colSpan]="1 + 1">Three-Four</td>
+    <td id="td12" [attr.colSpan]="1 + 1">Three-Four</td>
+</tr>
+<tr>
+
+</tr>
+<input type="text" id="myInput" class="form-control" value="Hello world!" disabled>
+<div [attr.aria-label]="label">...</div>
+<button aria-label="Close Popup">X</button>
+<a aria-label='Trở lại trang chủ' href='/'>🏠</a>
+<div *ngIf="user.age >= 13; else noPG13">Bạn có thể xem nội dung PG-13</div>
+<ng-template #noPG13>
+    <div>Bạn không thể xem nội dung PG-13</div>
+</ng-template>
+<div class="container"><app-no-encapsulation></app-no-encapsulation></div>
+
+<br>
+<app-emulated-encapsulation></app-emulated-encapsulation>
+<br>
+<app-shadow-dom-encapsulation></app-shadow-dom-encapsulation>
+<br>
+
+<app-progress-bar [progress]="15" [backgroundColor]="'#9e9e9e'" [progressColor]="'#2e8b57'"
+    rogress-bar></app-progress-bar>
+<br>
+<app-hero-parent></app-hero-parent>
+
+<br>
+<app-version-parent></app-version-parent>
+<br>
+<app-votetaker></app-votetaker>

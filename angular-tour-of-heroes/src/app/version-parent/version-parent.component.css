@@ -1,0 +1,7 @@
+.versionParent {
+    border: 2px;
+    border-style: solid;
+    border-color: brown;
+    padding: 10px;
+    width: 50%;
+}
