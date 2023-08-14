@@ -31,6 +31,10 @@ import { NgOnDestroyChildComponentComponent } from './ng-on-destroy-child-compon
 import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
 import { ZippyMultislotComponent } from './zippy-multislot/zippy-multislot.component';
 import { AdBannerComponent } from './ad-banner.component';
+import { ExampleContainerComponent } from './example-container/example-container.component';
+import { DynamicContentOneComponent } from './dynamic-content-one/dynamic-content-one.component';
+import { DynamicContentTwoComponent } from './dynamic-content-two/dynamic-content-two.component';
+
 
 
 @NgModule({
@@ -57,7 +61,7 @@ import { AdBannerComponent } from './ad-banner.component';
     NgOnDestroyComponentComponent,
     NgOnDestroyChildComponentComponent,
     ZippyBasicComponent,
-    ZippyMultislotComponent, AdBannerComponent
+    ZippyMultislotComponent, AdBannerComponent, ExampleContainerComponent, DynamicContentOneComponent, DynamicContentTwoComponent
 
   ],
   imports: [
@@ -73,6 +77,7 @@ import { AdBannerComponent } from './ad-banner.component';
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
