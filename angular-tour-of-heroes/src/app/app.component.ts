@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdItem } from './ad-item';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,6 @@ export class AppComponent {
     name: 'Tiep Phan',
     age: 12,
   };
+
+  ads: AdItem[] = [];
 }

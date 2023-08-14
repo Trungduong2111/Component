@@ -28,7 +28,9 @@ import { CountdownParentComponent } from './countdown-parent/countdown-parent.co
 import { CountdownParentViewChildComponent } from './countdown-parent-view-child/countdown-parent-view-child.component';
 import { NgOnDestroyComponentComponent } from './ng-on-destroy-component/ng-on-destroy-component.component';
 import { NgOnDestroyChildComponentComponent } from './ng-on-destroy-child-component/ng-on-destroy-child-component.component';
-
+import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
+import { ZippyMultislotComponent } from './zippy-multislot/zippy-multislot.component';
+import { AdBannerComponent } from './ad-banner.component';
 
 
 @NgModule({
@@ -54,6 +56,9 @@ import { NgOnDestroyChildComponentComponent } from './ng-on-destroy-child-compon
     CountdownParentViewChildComponent,
     NgOnDestroyComponentComponent,
     NgOnDestroyChildComponentComponent,
+    ZippyBasicComponent,
+    ZippyMultislotComponent, AdBannerComponent
+
   ],
   imports: [
     BrowserModule,
