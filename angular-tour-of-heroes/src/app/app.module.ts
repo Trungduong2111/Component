@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -34,6 +34,7 @@ import { AdBannerComponent } from './ad-banner.component';
 import { ExampleContainerComponent } from './example-container/example-container.component';
 import { DynamicContentOneComponent } from './dynamic-content-one/dynamic-content-one.component';
 import { DynamicContentTwoComponent } from './dynamic-content-two/dynamic-content-two.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 
 
@@ -61,11 +62,12 @@ import { DynamicContentTwoComponent } from './dynamic-content-two/dynamic-conten
     NgOnDestroyComponentComponent,
     NgOnDestroyChildComponentComponent,
     ZippyBasicComponent,
-    ZippyMultislotComponent, AdBannerComponent, ExampleContainerComponent, DynamicContentOneComponent, DynamicContentTwoComponent
+    ZippyMultislotComponent, AdBannerComponent, ExampleContainerComponent, DynamicContentOneComponent, DynamicContentTwoComponent, DirectivesComponent
 
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -78,6 +80,6 @@ import { DynamicContentTwoComponent } from './dynamic-content-two/dynamic-conten
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }

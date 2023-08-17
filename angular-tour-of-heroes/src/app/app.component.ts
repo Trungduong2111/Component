@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdItem } from './ad-item';
 
 @Component({
@@ -7,6 +7,7 @@ import { AdItem } from './ad-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Tour of Heroes';
   colSpan() {
     return null;
@@ -18,4 +19,5 @@ export class AppComponent {
   };
 
   ads: AdItem[] = [];
+
 }

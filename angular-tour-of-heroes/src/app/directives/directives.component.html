@@ -1,0 +1,212 @@
+<!-- <p>Choose a class:</p>
+
+<select #value="ngModel" (change)="select(value)" name="selectClass" id="class" [(ngModel)]="home">
+    <option value="sky">sky</option>
+    <option value="tomato">Tomato</option>
+</select>
+
+<div [ngClass]="{ 'home': home === 'home' }">
+    <h1>Welcome Home!</h1>
+    <p>I like it!</p>
+</div> -->
+
+<h1>Built-in Directives</h1>
+
+<h2>Built-in attribute directives</h2>
+
+<h3 id="ngModel">NgModel (two-way) Binding</h3>
+
+<fieldset>
+    <h4>NgModel examples</h4>
+    <p>Current item name: {{currentItem.name}}</p>
+    <p>
+        <label for="without">without NgModel:</label>
+        <input [value]="currentItem.name" (input)="currentItem.name=getValue($event)" id="without">
+    </p>
+
+    <p>
+        <label for="example-ngModel">[(ngModel)]:</label>
+        <input [(ngModel)]="currentItem.name" id="example-ngModel">
+    </p>
+
+    <p>
+        <label for="example-change">(ngModelChange)="...name=$event":</label>
+        <input [ngModel]="currentItem.name" (ngModelChange)="currentItem.name=$event" id="example-change">
+    </p>
+
+    <p>
+        <label for="example-uppercase">(ngModelChange)="setUppercaseName($event)"
+            <input [ngModel]="currentItem.name" (ngModelChange)="setUppercaseName($event)" id="example-uppercase">
+        </label>
+    </p>
+</fieldset>
+
+<hr>
+<h2 id="ngClass">NgClass Binding</h2>
+
+<p>currentClasses is {{currentClasses | json}}</p>
+<div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special.</div>
+<ul>
+    <li>
+        <label for="saveable">saveable</label>
+        <input type="checkbox" [(ngModel)]="canSave" id="saveable">
+    </li>
+    <li>
+        <label for="modified">modified:</label>
+        <input type="checkbox" [value]="!isUnchanged" (change)="isUnchanged=!isUnchanged" id="modified">
+    </li>
+    <li>
+        <label for="special">special: <input type="checkbox" [(ngModel)]="isSpecial" id="special"></label>
+    </li>
+</ul>
+<button type="button" (click)="setCurrentClasses()">Refresh currentClasses</button>
+
+<div [ngClass]="currentClasses">
+    This div should be {{ canSave ? "": "not"}} saveable,
+    {{ isUnchanged ? "unchanged" : "modified" }} and
+    {{ isSpecial ? "": "not"}} special after clicking "Refresh".</div>
+<br><br>
+<!-- toggle the "special" class on/off with a property -->
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+<div class="helpful study course">Helpful study course</div>
+<div [ngClass]="{'helpful':false, 'study':true, 'course':true}">Study course</div>
+
+
+<!-- NgStyle binding -->
+<hr>
+<h3>NgStyle Binding</h3>
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
+    This div is x-large or smaller.
+</div>
+
+<h4>[ngStyle] binding to currentStyles - CSS property names</h4>
+<p>currentStyles is {{currentStyles | json}}</p>
+
+<div [ngStyle]="currentStyles">
+    This div is initially italic, normal weight, and extra large (24px).
+</div>
+
+
+
+<br>
+<label for="canSave">italic: <input id="canSave" type="checkbox" [(ngModel)]="canSave"></label> |
+<label for="isUnchanged">normal: <input id="isUnchanged" type="checkbox" [(ngModel)]="isUnchanged"></label> |
+<label for="isSpecial">xlarge: <input id="isSpecial" type="checkbox" [(ngModel)]="isSpecial"></label>
+<button type="button" (click)="setCurrentStyles()">Refresh currentStyles</button>
+<br><br>
+<div [ngStyle]="currentStyles">
+    This div should be {{ canSave ? "italic": "plain"}},
+    {{ isUnchanged ? "normal weight" : "bold" }} and,
+    {{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".</div>
+
+<hr>
+<!-- <div #value="ngModel" [(ngModel)]="stypeStyles">
+    <ul>
+        <li>
+            <label for="saveable">Type1</label>
+            <input type="checkbox" [(ngModel)]="type1" id="type1">
+        </li>
+        <li>
+            <label for="saveable">Type2</label>
+            <input type="checkbox" [(ngModel)]="type2" id="type2">
+        </li>
+        <li>
+            <label for="saveable">Type3</label>
+            <input type="checkbox" [(ngModel)]="type3" id="type3">
+        </li>
+
+    </ul>
+</div>
+<button type="button" (click)="show(value)">Button</button>
+<button type="button" (click)="refeshcurrent()">Refresh current stype</button>
+
+<div [ngStyle]="currentStylesNew">
+    This div is initially italic, normal weight, and extra large (24px).
+</div> -->
+
+<div [ngClass]="getClassNames()">This element's classes are dynamically computed.</div>
+<button type="button" (click)="changeClass()">ChangeClass</button>
+<hr>
+<div [ngStyle]="defaultStyle()">This div is initially italic, normal weight, and extra large (24px).</div>
+<hr>
+<label for="example-ngModel">[(ngModule)]:</label>
+<input [(ngModel)]="valueNgModule" id="example-ngModel">
+<p>value: {{valueNgModule}}</p>
+
+
+<div class="container">
+    <h1>User Registration</h1>
+    <form #login="ngForm" (ngSubmit)="submit(login)">
+        <div class=" form-group">
+            <label for="fistname">Fist Name</label><br>
+            <input #name="ngModel" required="" minlength="2" maxlength="7" type="text" name="fistname"
+                class="form-control" ngModel>
+            <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                <p *ngIf="name.errors?.['required']">FirstName Required!!</p>
+                <p *ngIf="name.errors?.['minlength']">Sorry! Short FistName</p>
+            </div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="lastname">Last Name</label><br>
+            <input type="text" name="lastName" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="password">Password</label><br>
+            <input type="text" name="password" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <button class="btn btn-pimary" type="submit">Submit</button>
+    </form>
+</div>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label>
+        First Name:
+        <input type="text" formControlName="firstName">
+    </label>
+    <br>
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<div *ngFor="let author of authors; index as idx; count as total">
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+</div>
+
+<div *ngFor="let item of items; trackBy: trackByItems">
+    ({{item.id}}) {{item.name}}
+</div>
+<hr>
+
+<ul>
+    <li *ngFor="let author of authors; trackBy: getId">({{author.id}}) {{author.firstName}}</li>
+</ul>
+<label> Change Id 2</label>
+<br>
+<input [(ngModel)]="valueInput">
+<button type="button" (click)="value()">Apply!</button>
+
+<hr>
+<select name="switch" id="switch" [(ngModel)]="ngSwitch">
+    <option value="active">active</option>
+    <option value="inactive">inactive</option>
+    <option value="pending">pending</option>
+</select>
+<div [ngSwitch]="ngSwitch">
+    <p *ngSwitchCase="'active'">Status: Active</p>
+    <p *ngSwitchCase="'inactive'">Status: Inactive</p>
+    <p *ngSwitchCase="'pending'">Staus: Pending</p>
+    <p *ngSwitchDefault>Status default</p>
+</div>
