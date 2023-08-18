@@ -223,4 +223,7 @@ export class DirectivesComponent {
     console.info(this.authors);
   }
   ngSwitch: string = "";
+  color = 'pink';
+
+  condition = false;
 }

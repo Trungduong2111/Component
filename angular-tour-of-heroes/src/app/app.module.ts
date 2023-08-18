@@ -35,6 +35,9 @@ import { ExampleContainerComponent } from './example-container/example-container
 import { DynamicContentOneComponent } from './dynamic-content-one/dynamic-content-one.component';
 import { DynamicContentTwoComponent } from './dynamic-content-two/dynamic-content-two.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+
 
 
 
@@ -62,7 +65,14 @@ import { DirectivesComponent } from './directives/directives.component';
     NgOnDestroyComponentComponent,
     NgOnDestroyChildComponentComponent,
     ZippyBasicComponent,
-    ZippyMultislotComponent, AdBannerComponent, ExampleContainerComponent, DynamicContentOneComponent, DynamicContentTwoComponent, DirectivesComponent
+    ZippyMultislotComponent,
+    AdBannerComponent,
+    ExampleContainerComponent,
+    DynamicContentOneComponent,
+    DynamicContentTwoComponent,
+    DirectivesComponent,
+    HighlightDirective,
+    UnlessDirective
 
   ],
   imports: [
